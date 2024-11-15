@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <title>Place Gallery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="data/preview.png" type="image/png">
+    <meta property="og:title" content="Place Gallery">
+    <meta property="og:description" content="Galleria degli r/place">
+    <meta property="og:image" content="https://masone.cloud/r-place-gallery/data/preview.png">
+    <meta property="og:url" content="https://masone.cloud/r-place-gallery/">
+</head>
+
+<body>
+    <div id="loading-div" class="loading-overlay">
+        <div class="jumping-dots-loader"> <span></span> <span></span> <span></span> </div>
+        <div class="moving-gradient"></div>
+    </div>
+    <div id="circularMenu" class="circular-menu">
+        <a class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+            <i class="fa fa-gears"></i>
+        </a>
+        <menu class="items-wrapper">
+            <a class="menu-item fa fa-play" onclick="toggleAutomaticScroll()"></a>
+            <a id="colorChanger" class="menu-item fa fa-brush" onclick="cambiaColore()"></a>
+            <a class="menu-item fa fa-link" onclick="copyToClipboard('https://masone.cloud/r-place-gallery/')"></a>
+            <a class="menu-item fa fa-lock" style="color: #32CD32"></a>
+        </menu>
+    </div>
+    <div class="outer-container">
+        <main class="container" id="galleryContainer">
+        </main>
+    </div>
+    <script src="script/colorChanger.js"></script>
+    <script src="script/imageLoader.js"></script>
+    <script src="script/scroolManager.js"></script>
+    <script src="script/utility.js"></script>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'stats.php?visit', true);
+        xhr.send();
+    </script>
+
+</body>
+
+</html>

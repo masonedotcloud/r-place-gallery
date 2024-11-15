@@ -1,0 +1,94 @@
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center
+}
+
+.img {
+    position: relative;
+    margin: 10px
+}
+
+.img img {
+    width: 450px
+}
+
+body {
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fec02a;
+    overflow-y: hidden
+}
+
+.container-img {
+    position: relative;
+    height: min-content
+}
+
+.picture {
+    position: relative
+}
+
+main {
+    overflow-x: hidden;
+    display: flex
+}
+
+.frame {
+    background-color: #ddc;
+    border: solid 5vmin #eee;
+    border-radius: 2px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 10px;
+    padding: 1vmin;
+    position: relative;
+    text-align: center;
+    border-color: #ddd #eee #fff
+}
+
+.frame:before {
+    border-radius: 2px;
+    bottom: -2vmin;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25) inset;
+    content: "";
+    left: -2vmin;
+    position: absolute;
+    right: -2vmin;
+    top: -2vmin
+}
+
+.frame:after {
+    border-radius: 2px;
+    bottom: -2.5vmin;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+    content: "";
+    left: -2.5vmin;
+    position: absolute;
+    right: -2.5vmin;
+    top: -2.5vmin
+}
+
+@media (max-width: 768px) {
+    .img img {
+        width: 250px
+    }
+
+    .frame {
+        margin: 5px
+    }
+
+    .container {
+        height: 80vh
+    }
+}
+
+#galleryContainer {
+    cursor: grab
+}
+
+#galleryContainer.dragging {
+    cursor: grabbing !important
+}
